@@ -6,7 +6,7 @@ In this project, a structured convolutional network followed by a fully-connecte
 To meet the specifications, the project includes three files: 
 * the Ipython notebook with the code
 * the code exported as an html file
-* a writeup report either as a markdown and a pdf file 
+* a writeup report as a markdown file 
 
 [1_classes_distribution]:output_images/1_classes_distribution.png
 [1_raw_images]:output_images/1_raw_images.png
