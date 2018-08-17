@@ -24,6 +24,14 @@ To meet the specifications, the project includes three files:
 [3_web_images_results]:output_images/3_web_images_results.png
 [U_shaped]:output_images/U-shaped.png
 
+[_layer1_0]:output_images/_layer1_0.png
+[_layer1_1]:output_images/_layer1_1.png
+[_layer1_2]:output_images/_layer1_2.png
+[_layer1_3]:output_images/_layer1_3.png
+[_layer2_1]:output_images/_layer2_1.png
+[_layer2_3]:output_images/_layer2_3.png
+[_layer2_5]:output_images/_layer2_5.png
+[layer2]:output_images/layer2.png
 
 # The Project
 ---
@@ -238,10 +246,40 @@ For which a detailed image and bar graph can be seen here:
 
 ![3_P5max_webset][3_P5max_webset]
 
+## Step 4: Visualize the Neural Network's State with Test Images
+
+Layer 1: convolutional 
+
+* Layer1_0 (3x3): 
+![_layer1_0][_layer1_0]
+
+* Layer1_1 (3x3):
+
+![_layer1_1][_layer1_1]
+
+* Layer1_2 (1x1):
+
+![_layer1_2][_layer1_2]
+
+
+* Layer1_2 (dropout):
+![_layer1_3][_layer1_3]
+
+* Layer2_1 (1x1):
+![_layer2_1][_layer2_1]
+
+* Layer2_1 (3x3):
+![_layer2_3][_layer2_3]
+
+* Layer2_1 (5x5):
+![_layer2_5][_layer2_5]
+
+* Layer 2 - prior to Fully connected
+![layer2][layer2]
+
 
 
 # References
-2_postprocessing_2_samples.png
 [1] [GIMP's White balance](https://pippin.gimp.org/image-processing/chapter-automaticadjustments.html)
 
 [2] [Cambridge in color](https://www.cambridgeincolour.com/tutorials/white-balance.htm)
