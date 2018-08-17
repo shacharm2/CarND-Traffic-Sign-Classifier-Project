@@ -64,7 +64,7 @@ The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&sub
 ## Dataset samples
 ![1_raw_samples][1_raw_samples]
 
-And in order to see some of the variance, a few selected classes have been plotted, in order to see variations is size, luminosity, backgrounds and interference of other classes, such in the case of a part of another traffic sign within the image
+In order to see some of the variance between the images, a few selected classes have been plotted, in order to see variations is size, luminosity, backgrounds and interference of other classes, such in the case of a part of another traffic sign within the image
 ![1_raw_images][1_raw_images]
 
 ## Dataset disribution
@@ -81,7 +81,7 @@ Looking at the individual classes distirbution shows the spectrum of frequency o
 
 ![1_train_ordered_hist][1_train_ordered_hist]
 
-in parallel with the validation & test distributions, where similar balance exists for the various classes. 
+The validation & test distributions have been plotted as well. And a similar (but not identical) balance exists for the various classes. 
 ![1_test_ordered_hist][1_test_ordered_hist]
 
 However, this unbalanced , in turn, might cause a bias in the results, where most train is done, for example on the 50mph limit traffic sign and tested mostly on it and thus, not masking out lack of data on less frequent signs, while presenting accuracy that maight not scale well to the real world.
