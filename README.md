@@ -252,6 +252,14 @@ For which a detailed image and bar graph can be seen here:
 
 ## Step 4: Visualize the Neural Network's State with Test Images
 
+The following convolutional layers have been visualized, allowing to see 
+
+1. Which areas are the ROI
+2. Which layers hold most information
+
+This, in turn, would allow better optimization of the network. Second, the area of intrest for each sign can be seen at the final layers of the network, which is interesting for additional purposes, such as network analysis.
+
+
 Layer 1: convolutional 
 
 * Layer1_0 (3x3): 
