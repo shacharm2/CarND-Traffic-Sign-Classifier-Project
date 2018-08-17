@@ -22,6 +22,7 @@ To meet the specifications, the project includes three files:
 [udacity_inception]:output_images/udacity_inception.jpg
 [3_training_accuracy]:output_images/3_training_accuracy.png
 [3_web_images_results]:output_images/3_web_images_results.png
+[U_shaped]:output_images/U-shaped.png
 
 
 # The Project
@@ -141,6 +142,8 @@ To further illustrate the examples, the preprocessed images are shown with their
 
 The model architecture is composed of three main parts; a deep convolution section, catching features at various sizes; an inception section, aimed at extracting localities at various scales around each point; a fully connected layer for classification.
 
+The network is inspired by [5], a U-shape image-to-image network, in which the idea has been reused for this image-to-signal classification problem.
+
 1. Deep convolution layer
     1.1. InputTwo 3x3 convolution layers, with 16 channels
 
@@ -152,6 +155,9 @@ The model architecture is composed of three main parts; a deep convolution secti
     1.4. Max pooling
 
 2. Inception layer
+
+    The inception layer as depicted by Udacity below ![udacity_inception][udacity_inception] has been constructed
+    
 
     2.1. Parallel 5x5, 3x3, 1x1 convolutional layers, with 32 channels
 
@@ -165,7 +171,6 @@ The model architecture is composed of three main parts; a deep convolution secti
 
 3. Fully connected output layer - 
     3.1. Contatenation of pre-max-pool of Layer 1 and of layer 2. 
-    ![udacity_inception][udacity_inception]
     
       * This was done in order to bring the entire data of each of the layers' scale to the fully connected output. Concatenating prior to max-pooling also slightly changes the nonlinearity process, in order to slighly lower the correlation with the intermediate layers.
       * ReLU activation
@@ -178,6 +183,12 @@ The model architecture is composed of three main parts; a deep convolution secti
     
     3.1. Fully connected logits layer the size out output (43 outputs)
       * L2 weights regulizer
+
+
+Similar to [5], a U-shaped network, there is an upscale of each layer and each the layers' outputs are concatenated at the output. However, [5] is a an image-to-image network and this is an image-to-signal classificathus, only the 1st half of the network shape has been used, such that the second half of the U-shaped network, the upscaling network has been discarded.
+
+![U_shaped][U_shaped]
+
 
 ## Model training
 
@@ -207,15 +218,19 @@ Before contuining to the web test set, a visualization of 5 example from the tes
 
 ## Validatoin and Test sets results
 
-* val acc 0.990
-* test acc 0.966
-
+* val accuracy 98.2 [%]
+* test accuracy 97.3 [%]
 
 # Web traffic signs 
 
 Images have been found on the web. Some images are public stock images with markings on them. Some are at a different angle, some differ in size - a little further or taken at a close distance (a stop sign from below and very large). Another example - a priority work sign with another circular sign attached behind him forms an unseen shape around the triangular traffic sign shape.
 
-Nonetheless, if these can be easily identified by a human eye, it should be expected to have similar identification capabilities from the network:
+Nonetheless, if these can be easily identified by a human eye, it should be expected to have similar identification capabilities from the network
+
+## Performance on New Images &  Softmax Probabilities
+
+* The performance on the 5 5 web set images was 100 [%] vs 97.3 [%]. However, in these small numbers, there is virtually no accuracy in estimating the true accuracy.
+* The softmax probabilities were >99%, but slightly lower than the testset, as can be seen on the comperable top 5 teset images, 
 
 ![3_web_images_results][3_web_images_results]
 
@@ -224,7 +239,6 @@ For which a detailed image and bar graph can be seen here:
 ![3_P5max_webset][3_P5max_webset]
 
 
-3_web_images_results
 
 # References
 2_postprocessing_2_samples.png
@@ -235,3 +249,5 @@ For which a detailed image and bar graph can be seen here:
 [3] [YUV histogram equalization](https://chrisalbon.com/machine_learning/preprocessing_images/enhance_contrast_of_color_image/)
 
 [4] [Udacity Inception Module](https://www.youtube.com/watch?v=VxhSouuSZDY)
+
+[5] [U-net](https://arxiv.org/pdf/1505.04597.pdf)
