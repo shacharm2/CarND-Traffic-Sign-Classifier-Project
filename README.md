@@ -164,10 +164,14 @@ The network is inspired by [5], a U-shape image-to-image network, in which the i
 
 2. Inception layer
 
-    The inception layer as depicted by Udacity below ![udacity_inception][udacity_inception] has been constructed
+    The inception layer as depicted by Udacity [4], as shown below, has been constructed: 
+     ![udacity_inception][udacity_inception] 
     
+    2.1. average pooling followed by a 1x1 convolutional layer, with 32 channels
+      * Same padding - for inception concatenation 
+      * ReLU activation
 
-    2.1. Parallel 5x5, 3x3, 1x1 convolutional layers, with 32 channels
+    2.1. Parallel 5x5, 3x3 convolutional layers, with 32 channels
 
       * Same padding - for inception concatenation 
       * ReLU activation
@@ -278,7 +282,20 @@ Layer 1: convolutional
 ![layer2][layer2]
 
 
-# References
+# Conclusions
+
+In the project a deep neural network has been constructed to classify German traffic signs. The network was built as a consequential deep neural network, followed by an inception module and a head fully connected module, which its size is dependant on the classification problem size.
+
+The validation and test set have reached 98.2% & 96.8%, respectively. Five web images were tested as well, all classified correctly, of which one was classified with a Softmax probability of about 83%.
+
+A major improvement was seen after data augmentation, allowing numerous new images to improve the overall probability of correct classification by the network. 
+
+A few of the model's shortcommings:
+1. Large network - dropout creates smaller networks as iterations passes, in order to reduce overfitting. This means there exists a smaller network that can achieve similar results, with a 50% less neurons.
+
+2. Imbalanced data - data is imbalanced on both training, testing and validation. This causes a both a training and testing bias, and for the performance results to be dominated by the most frequent classes. A solution to this issue would be frequency based augmentation, for example, such that the most frequent image would be further augmented less than the least frequent. Finally, an equal number of augmentations would allow a more balanced training phase.
+
+3. Extra layers - Visualization has shown some layers, specifically the 1x1 convolutional layer of the inception module, to have practically no data. This suggest performance might remain the same, but with less neurons in the model
 
 
 # References
