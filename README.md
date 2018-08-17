@@ -238,7 +238,7 @@ Nonetheless, if these can be easily identified by a human eye, it should be expe
 ## Performance on New Images &  Softmax Probabilities
 
 * The performance on the 5 5 web set images was 100 [%] vs 97.3 [%]. However, in these small numbers, there is virtually no accuracy in estimating the true accuracy.
-* The softmax probabilities were >99%, but slightly lower than the testset, as can be seen on the comperable top 5 teset images, 
+* The softmax probabilities were most >99%, except for the road sign, where correct classification was @ 85 [%]
 
 ![3_web_images_results][3_web_images_results]
 
@@ -277,6 +277,8 @@ Layer 1: convolutional
 * Layer 2 - prior to Fully connected
 ![layer2][layer2]
 
+
+# References
 
 
 # References
