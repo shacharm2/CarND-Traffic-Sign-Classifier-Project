@@ -21,7 +21,7 @@ To meet the specifications, the project includes three files:
 [3_P5max_webset]:output_images/3_P5max_webset.png
 [udacity_inception]:output_images/udacity_inception.jpg
 [3_training_accuracy]:output_images/3_training_accuracy.png
-[3_web_images_results]:output_images/3_web_images_results.png
+[3_web_images_results]:output_images/3_P5max_webimages_probabilities.png
 [U_shaped]:output_images/U-shaped.png
 
 [_layer1_0]:output_images/_layer1_0.png
@@ -226,8 +226,8 @@ Before contuining to the web test set, a visualization of 5 example from the tes
 
 ## Validatoin and Test sets results
 
-* val accuracy 98.2 [%]
-* test accuracy 97.3 [%]
+* validation set accuracy 98.2 [%]
+* test set accuracy 96.8 [%]
 
 # Web traffic signs 
 
@@ -238,7 +238,7 @@ Nonetheless, if these can be easily identified by a human eye, it should be expe
 ## Performance on New Images &  Softmax Probabilities
 
 * The performance on the 5 5 web set images was 100 [%] vs 97.3 [%]. However, in these small numbers, there is virtually no accuracy in estimating the true accuracy.
-* The softmax probabilities were most >99%, except for the road sign, where correct classification was @ 85 [%]
+* The softmax probabilities were most >99%, except for the road sign, where correct classification was @ 83 [%]
 
 ![3_web_images_results][3_web_images_results]
 
