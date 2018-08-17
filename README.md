@@ -84,7 +84,7 @@ Looking at the individual classes distirbution shows the spectrum of frequency o
 The validation & test distributions have been plotted as well. And a similar (but not identical) balance exists for the various classes. 
 ![1_test_ordered_hist][1_test_ordered_hist]
 
-However, this unbalanced , in turn, might cause a bias in the results, where most train is done, for example on the 50mph limit traffic sign and tested mostly on it and thus, not masking out lack of data on less frequent signs, while presenting accuracy that maight not scale well to the real world.
+However, this unbalanced dataset in turn, might cause a bias in the results, where most training is done, for example on the 50mph limit traffic sign and tested mostly on it. Thus, not masking out lack of data on less frequent signs, while presenting accuracy that maight not scale well to the real world.
 
 # Image preprocessing
 
