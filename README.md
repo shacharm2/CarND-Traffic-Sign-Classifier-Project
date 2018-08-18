@@ -19,9 +19,13 @@ To meet the specifications, the project includes three files:
 [2_postprocessing]:output_images/2_postprocessing.png
 [2_P5max_testset]:output_images/2_P5max_testset.png
 [3_P5max_webset]:output_images/3_P5max_webset.png
+[3_P5max_webset_previous]:output_images/3_P5max_webset_previous.png
+
 [udacity_inception]:output_images/udacity_inception.jpg
 [3_training_accuracy]:output_images/3_training_accuracy.png
 [3_web_images_results]:output_images/3_P5max_webimages_probabilities.png
+[3_web_images_results_previous]:output_images/3_P5max_webimages_probabilities_previous.png
+
 [U_shaped]:output_images/U-shaped.png
 
 [_layer1_0]:output_images/_layer1_0.png
@@ -230,8 +234,8 @@ Before contuining to the web test set, a visualization of 5 example from the tes
 
 ## Validatoin and Test sets results
 
-* validation set accuracy 98.2 [%]
-* test set accuracy 96.8 [%]
+* validation set accuracy 98.6 [%]
+* test set accuracy 96.9 [%]
 
 # Web traffic signs 
 
@@ -241,14 +245,37 @@ Nonetheless, if these can be easily identified by a human eye, it should be expe
 
 ## Performance on New Images &  Softmax Probabilities
 
-* The performance on the 5 5 web set images was 100 [%] vs 97.3 [%]. However, in these small numbers, there is virtually no accuracy in estimating the true accuracy.
+
+Here is presented a previous model training alongside the current, since there is a difference in the Softmax probablities. While all classifications were correct, one of the web images, namely, the road work image, has been classified correctly with 83% on one train and 99% on the other. 
+
+This might mean additional epochs were needed, or the images is closer to the boundary between classes compared to other images. But an interesting exercise is to measure the range of Softmax probabilities between seperate training sessions, in order to measure robustness of the network.
+
+---
+
+### Run #1 
+
+* The performance on the 5 web set images was 100 [%] vs 97.3 [%] on test. However, with these small web test set numbers, there is virtually no accuracy in estimating the true accuracy.
 * The softmax probabilities were most >99%, except for the road sign, where correct classification was @ 83 [%]
+
+![3_web_images_results_previous][3_web_images_results_previous]
+
+For which a detailed image and bar graph can be seen here:
+
+![3_P5max_webset_previous][3_P5max_webset_previous]
+
+---
+
+### Run #2 
+
+* The performance on the 5 web set images was 100 [%] vs 96.9 [%]. As previously stated, with small sample numbers, there is virtually no accuracy in estimating the true accuracy.
+* The softmax probabilities were all >99%
 
 ![3_web_images_results][3_web_images_results]
 
 For which a detailed image and bar graph can be seen here:
 
 ![3_P5max_webset][3_P5max_webset]
+
 
 ## Step 4: Visualize the Neural Network's State with Test Images
 
